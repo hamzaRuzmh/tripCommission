@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-06-10 11:25:33.371504",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "is_first_time_free",
+  "commission_rate"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "is_first_time_free",
+   "fieldtype": "Check",
+   "label": "Is the first time free?"
+  },
+  {
+   "fieldname": "commission_rate",
+   "fieldtype": "Table",
+   "label": "Commission Rate",
+   "options": "Driver District"
+  },
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Template Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-10 15:19:24.219678",
+ "modified_by": "Administrator",
+ "module": "trip commission",
+ "name": "Commission Template",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "template_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "template_name",
+ "translated_doctype": 1
+}
