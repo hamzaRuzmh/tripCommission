@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class DriverDistrict(Document):
+class TemplateXDistrictCommissionTable(Document):
 	pass

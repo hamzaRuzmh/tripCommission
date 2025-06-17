@@ -20,7 +20,7 @@
    "fieldname": "commission_rate",
    "fieldtype": "Table",
    "label": "Commission Rate",
-   "options": "Driver District"
+   "options": "TemplateXDistrict Commission Table"
   },
   {
    "fieldname": "template_name",
@@ -36,7 +36,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-10 15:19:24.219678",
+ "modified": "2025-06-16 22:58:35.291075",
  "modified_by": "Administrator",
  "module": "trip commission",
  "name": "Commission Template",

@@ -38,7 +38,7 @@
   "name": "Driver-custom_driver_district_commision",
   "no_copy": 0,
   "non_negative": 0,
-  "options": "Driver District",
+  "options": "TemplateXDistrict Commission Table",
   "permlevel": 0,
   "placeholder": null,
   "precision": "",
