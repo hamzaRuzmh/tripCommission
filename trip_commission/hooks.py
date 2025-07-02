@@ -249,8 +249,19 @@ fixtures = [
                 "Sales Invoice-custom_trip_commission",
                 "Sales Invoice-custom_trip_driver_commission",
                 "Driver-custom_driver_district_commision",                
-                "Employee-custom_employee_commission_template"
-
+                "Employee-custom_employee_commission_template",
+                "Employee-custom_commission_template",
+                "Employee-custom_cars",
+                "Employee-custom_car_number"
+            ]]
+        ]
+    },
+    {
+        "dt": "Client Script",
+        "filters": [
+            ["name", "in", [
+                "Commission Template Table",
+                "Car Number"
             ]]
         ]
     }

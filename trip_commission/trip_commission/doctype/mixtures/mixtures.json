@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-02 22:34:24.281176",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "mixtures_number",
+  "mixtures_size",
+  "column_break_vtcq",
+  "landing_measurement",
+  "maximum_aggregate"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "Mix-"
+  },
+  {
+   "fieldname": "mixtures_number",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062e\u0644\u0637\u0629"
+  },
+  {
+   "fieldname": "mixtures_size",
+   "fieldtype": "Data",
+   "label": "\u062d\u062c\u0645 \u0627\u0644\u062e\u0644\u0637\u0629"
+  },
+  {
+   "fieldname": "column_break_vtcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "landing_measurement",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0647\u0628\u0648\u0637"
+  },
+  {
+   "fieldname": "maximum_aggregate",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062d\u062f \u0627\u0644\u0623\u0639\u0644\u0649 \u0644\u0644\u0631\u0643\u0627\u0645"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-02 22:34:24.281176",
+ "modified_by": "Administrator",
+ "module": "trip commission",
+ "name": "Mixtures",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "mixtures_number"
+}

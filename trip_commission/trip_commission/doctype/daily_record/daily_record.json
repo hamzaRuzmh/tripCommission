@@ -1,0 +1,329 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-02 22:59:08.288862",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nfmq",
+  "amended_from",
+  "naming_series",
+  "location",
+  "distance",
+  "ref1",
+  "column_break_syfl",
+  "employee",
+  "employee_name",
+  "car_number",
+  "ref2",
+  "column_break_wjqo",
+  "customer",
+  "customer_name",
+  "date",
+  "section_break_doto",
+  "type",
+  "cement",
+  "mixtures_number",
+  "mixtures_size",
+  "landing_measurement",
+  "maximum_aggregate",
+  "column_break_tehs",
+  "cement_caliber",
+  "factory",
+  "add_ons",
+  "add_ons2",
+  "time_of_out",
+  "column_break_gbfs",
+  "casting_type",
+  "required",
+  "quantity_received",
+  "truck_quantity",
+  "pump_number",
+  "station_number",
+  "commission_details_section",
+  "commission_template",
+  "number_of_trip",
+  "column_break_hzxd",
+  "basic_commission",
+  "total_commission",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_nfmq",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Record",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0631\u062f",
+   "options": "0"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0642\u0639",
+   "options": "Trip District"
+  },
+  {
+   "fetch_from": "location.district_distance",
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "label": "\u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+   "non_negative": 1,
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ref1",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u062c\u0639 1"
+  },
+  {
+   "fieldname": "column_break_syfl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0638\u0641",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "\u0625\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641",
+   "read_only": 1
+  },
+  {
+   "fieldname": "car_number",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0633\u064a\u0627\u0631\u0629",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "ref2",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u062c\u0639 2"
+  },
+  {
+   "fieldname": "column_break_wjqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0639\u0645\u064a\u0644",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "\u0625\u0633\u0645 \u0627\u0644\u0639\u0645\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "section_break_doto",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u062e\u0631\u0633\u0627\u0646\u0647"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "\u0627\u0644\u0646\u0648\u0639",
+   "options": "\u0631\u062f \u0639\u0627\u062f\u064a"
+  },
+  {
+   "fieldname": "cement",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0627\u0633\u0645\u0646\u062a",
+   "options": "SRC\nOPC"
+  },
+  {
+   "fieldname": "mixtures_number",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062e\u0644\u0637\u0629",
+   "options": "Mixtures"
+  },
+  {
+   "fetch_from": "mixtures_number.mixtures_size",
+   "fieldname": "mixtures_size",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0631\u062a\u0628\u0629 \u0646\u064a\u0648\u062a\u0646/\u0645\u06453"
+  },
+  {
+   "fetch_from": "mixtures_number.landing_measurement",
+   "fieldname": "landing_measurement",
+   "fieldtype": "Data",
+   "label": "\u0642\u064a\u0627\u0633 \u0627\u0644\u0647\u0628\u0648\u0637/\u0645\u0645"
+  },
+  {
+   "fetch_from": "mixtures_number.maximum_aggregate",
+   "fieldname": "maximum_aggregate",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062d\u062f \u0627\u0644\u0627\u0639\u0644\u0649 \u0644\u0644\u0631\u0643\u0627\u0645\t\t"
+  },
+  {
+   "fieldname": "column_break_tehs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cement_caliber",
+   "fieldtype": "Link",
+   "label": "\u0643\u0645\u064a\u0629 \u0627\u0644\u0627\u0633\u0645\u0646\u062a(\u0639\u064a\u0627\u0631 \u0627\u0644\u0627\u0633\u0645\u0646\u062a)",
+   "options": "Cement caliber"
+  },
+  {
+   "fieldname": "factory",
+   "fieldtype": "Select",
+   "label": "\u0627\u0644\u0645\u0635\u0646\u0639",
+   "options": "\u062a\u0641\u0648\u064a\u0636"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0627\u0636\u0627\u0641\u0627\u062a"
+  },
+  {
+   "fieldname": "add_ons2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0636\u0627\u0641\u0629 \u0627\u062e\u0631\u0649"
+  },
+  {
+   "fieldname": "time_of_out",
+   "fieldtype": "Time",
+   "label": "\u0648\u0642\u062a \u0627\u0644\u062a\u062d\u0645\u064a\u0644"
+  },
+  {
+   "fieldname": "column_break_gbfs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "casting_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0635\u0628",
+   "options": "\u0623\u0639\u0645\u062f\u0629"
+  },
+  {
+   "fieldname": "required",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629 \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629"
+  },
+  {
+   "fieldname": "quantity_received",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u0644\u0645\u0629"
+  },
+  {
+   "fieldname": "truck_quantity",
+   "fieldtype": "Data",
+   "label": "\u0643\u0645\u064a\u0629 \u0627\u0644\u0634\u0627\u062d\u0646\u0629"
+  },
+  {
+   "fieldname": "pump_number",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0636\u062e\u0629",
+   "options": "The Pump"
+  },
+  {
+   "fieldname": "station_number",
+   "fieldtype": "Select",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0637\u0629",
+   "options": "\u062a\u0641\u0648\u064a\u0636\n\u062a\u062c\u0627\u0646\u0633\n\u0635\u0631\u0648\u062d"
+  },
+  {
+   "fieldname": "commission_details_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0639\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fetch_from": "employee.custom_commission_template",
+   "fieldname": "commission_template",
+   "fieldtype": "Link",
+   "label": "\u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0639\u0645\u0648\u0644\u0629",
+   "options": "Commission Template"
+  },
+  {
+   "fieldname": "number_of_trip",
+   "fieldtype": "Int",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062d\u0645\u0648\u0644\u0629",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_hzxd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_commission",
+   "fieldtype": "Float",
+   "label": "\u0627\u0644\u0639\u0645\u0648\u0644\u0629 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_commission",
+   "fieldtype": "Float",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0639\u0645\u0648\u0644\u0629",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Record",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-02 22:59:08.288862",
+ "modified_by": "Administrator",
+ "module": "trip commission",
+ "name": "Daily Record",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

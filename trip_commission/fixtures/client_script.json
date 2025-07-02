@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Daily Record",
+  "enabled": 1,
+  "modified": "2025-07-02 23:00:37.299497",
+  "module": "trip commission",
+  "name": "Car Number",
+  "script": "frappe.ui.form.on('Daily Record', {\r\n    employee: function(frm) {\r\n        if (frm.doc.employee) {\r\n            frappe.db.get_value('Employee', frm.doc.employee, 'custom_car_number')\r\n                .then(r => {\r\n                    if (r && r.message) {\r\n                        frm.set_value('car_number', r.message.custom_car_number);\r\n                    }\r\n                });\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Daily Record",
+  "enabled": 1,
+  "modified": "2025-07-02 23:01:08.445092",
+  "module": "trip commission",
+  "name": "Commission Template Table",
+  "script": "function fetch_commission_rate(frm) {\r\n    if (frm.doc.commission_template && frm.doc.location) {\r\n        frappe.call({\r\n            method: 'frappe.client.get',\r\n            args: {\r\n                doctype: 'Commission Template',\r\n                name: frm.doc.commission_template\r\n            },\r\n            callback: function(response) {\r\n                if (response.message) {\r\n                    const template_data = response.message;\r\n                    const commission_rates = template_data.commission_rate || [];\r\n\r\n                    const location_name = frm.doc.location;\r\n                    const matched_row = commission_rates.find(rate => {\r\n                        return rate.dr_district_name === location_name;\r\n                    });\r\n\r\n                    let totalComm = 0;\r\n\r\n                    if (matched_row) {\r\n                        // ✅ فقط إذا كانت number_of_trip > 1\r\n                        if (frm.doc.number_of_trip > 1) {\r\n                            let basicComm = parseFloat(matched_row.dr_comm_value) || 0;\r\n                            frm.set_value('basic_commission', basicComm);\r\n                            totalComm = basicComm;\r\n                        } else {\r\n                            frm.set_value('basic_commission', '');\r\n                        }\r\n                    } else {\r\n                        frm.set_value('basic_commission', '');\r\n                    }\r\n\r\n                    // ✅ دائماً نضيف 15 إذا كان اليوم جمعة\r\n                    if (frm.doc.date) {\r\n                        let dayName = frappe.datetime.str_to_obj(frm.doc.date).toLocaleDateString('en-US', { weekday: 'long' });\r\n                        if (dayName === 'Friday') {\r\n                            totalComm += 15;\r\n                        }\r\n                    }\r\n\r\n                    frm.set_value('total_commission', totalComm);\r\n                }\r\n            }\r\n        });\r\n    }\r\n}\r\n\r\nfrappe.ui.form.on('Daily Record', {\r\n    commission_template: function(frm) {\r\n        fetch_commission_rate(frm);\r\n    },\r\n    location: function(frm) {\r\n        fetch_commission_rate(frm);\r\n    },\r\n    number_of_trip: function(frm) {\r\n        fetch_commission_rate(frm);\r\n    },\r\n    date: function(frm) {\r\n        fetch_commission_rate(frm);\r\n    }\r\n});\r\n\r\nfrappe.ui.form.on('Daily Record', {\r\n    validate: function(frm) {\r\n        if (!frm.doc.commission_template) {\r\n            frappe.throw(`\r\n                <b>هذا الموظف ليس لديه نموذج عمولة</b><br>\r\n                يرجى الذهاب إلى مستند الموظف وإضافة نموذج عمولة إلى الموظف.\r\n            `);\r\n        }\r\n    }\r\n});\r\n\r\n",
+  "view": "Form"
+ }
+]
