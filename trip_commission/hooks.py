@@ -246,9 +246,9 @@ fixtures = [
         "dt": "Custom Field",
         "filters": [
             ["name", "in", [
-                "Sales Invoice-custom_trip_commission",
-                "Sales Invoice-custom_trip_driver_commission",
-                "Driver-custom_driver_district_commision",                
+                #"Sales Invoice-custom_trip_commission",
+                #"Sales Invoice-custom_trip_driver_commission",
+                #"Driver-custom_driver_district_commision",                
                 "Employee-custom_employee_commission_template",
                 "Employee-custom_commission_template",
                 "Employee-custom_cars",
